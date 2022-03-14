@@ -5,11 +5,10 @@
     session_start();
 
     $titulo = $_POST['titulo'];
-    $categoria = $_POST['categoria'];
-    $fecha = $_POST['fecha'];
+    $descripcion = $_POST['descripcion'];
     $iduser = $_SESSION['usuario'];
 
-    if (empty($titulo and $categoria and $fecha)) {
+    if (empty($titulo and $descripcion)) {
         echo '
         <script>
             alert("Es necesario llenar todos los campos");
@@ -23,11 +22,11 @@
     $row=mysqli_fetch_row($validar_usuario);
 
 
-    $validar_torneo=mysqli_query($conexion, "SELECT * FROM torneos WHERE Título='$titulo'");
+    $validar_torneo=mysqli_query($conexion, "SELECT * FROM tareas WHERE titulo='$titulo'");
     if(mysqli_num_rows($validar_torneo)>0){
         echo'
           <script>
-              alert("Este torneo ya está registrado");
+              alert("Esta Tarea ya está registrado");
               window.location="../torneos.php";
           </script>
         ';
@@ -36,14 +35,14 @@
  
 
 
-    $query = "INSERT INTO torneos(Título, Categoría, Fecha_Inicio, Id_Usuario) 
-    VALUES('$titulo', '$categoria', '$fecha', $row[0])";
+    $query = "INSERT INTO tareas(titulo, descripcion, usuario_id) 
+    VALUES('$titulo', '$descripcion', $row[0])";
 
     $ejecutar = mysqli_query($conexion, $query);
 
     echo '
         <script>
-        alert("Torneo registrado con éxito");
+        alert("Tarea registrado con éxito");
         window.location="../torneos.php";
        </script>
 

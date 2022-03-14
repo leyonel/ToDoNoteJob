@@ -1,6 +1,6 @@
 <?php
  
-    $conexion = mysqli_connect("localhost", "root", "", "login_register_db");
+    $conexion = mysqli_connect("localhost", "root", "", "notepad");
     /*
     if($conexion){
         echo 'ERA UN CARRO DE LA TRAISLER';

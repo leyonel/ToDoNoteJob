@@ -1,11 +1,11 @@
 <?php
     include 'conexion_be.php';
-    $query = "DELETE FROM torneos WHERE torneos.Id = ${_SERVER['QUERY_STRING']} ";
+    $query = "DELETE FROM tareas WHERE tareas.id = ${_SERVER['QUERY_STRING']} ";
     $ejecutar = mysqli_query($conexion, $query);
     if($ejecutar){
         echo '
           <script>
-               alert("Torneo Eliminado");
+               alert("Tarea Eliminada");
                window.location="../torneos.php";
           </script>
         ';

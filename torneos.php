@@ -68,7 +68,7 @@
                     <label for="nombreEquipo" class="label">Título de Tarea</label>
                 </div>
                 <div class="form-field col-md-12">
-                    <input type="text" class="input-text" name="categoria" id="categoria">
+                    <input type="text" class="input-text" name="descripcion" id="descripcion">
                     <label for="nombrecategoria" class="label">Descripcion</label>
                 </div>
                 <div class="form-field col-lg-12">
@@ -92,7 +92,12 @@
                             <th>
                                 Descripcion
                             </th>
-                           
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Acciones
+                            </th>
                          </tr>
                     </thead>
 
@@ -100,7 +105,7 @@
                     <?php
                         $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$user'");
                         $row=mysqli_fetch_row($validar_usuario);
-                        $query = "SELECT * FROM torneos WHERE Id_usuario = $row[0] ";
+                        $query = "SELECT * FROM tareas WHERE usuario_id = $row[0] ";
                 
                         $ejecutar = mysqli_query($conexion, $query);
                 
@@ -114,7 +119,7 @@
                                 <td><?php echo $row[2] ?></td>
                                 <td><?php echo $row[3] ?></td>
                                 <td><button type="button" class="btn btn-danger" onclick="location.href='php/eliminar_torneo.php?<?php echo $row[0]?>'">Borrar</button></td>
-                                <td><button type="button" class="btn btn-success" onclick="location.href='vistatorneo.php?<?php echo $row[0]?>'">Ver</button></td>            
+                                <!-- <td><button type="button" class="btn btn-success" onclick="location.href='vistatorneo.php?<?php echo $row[0]?>'">Ver</button></td>             -->
                             </tr>
                             
                         </tbody>  

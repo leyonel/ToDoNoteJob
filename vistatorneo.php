@@ -27,7 +27,7 @@
             <div class="team-form row">
                 <div class="form-field col-md-12">
                     <input type="text" class="input-text" id="name" name="name">
-                    <label for="nombreEquipo" class="label">Nombre del Equipo</label>
+                    <label for="nombreEquipo" class="label">Titulo</label>
                 </div>
                 <div class="form-field col-lg-12">
                     <button class="submit-btn"   name=""> Registrar </button>

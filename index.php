@@ -19,7 +19,7 @@
         <h1 class="title">ChallengeWeb</h1>
 
         <div class="form">
-             <img src="img/Winners_Monochromatic.svg" alt="imagen de login" class="form_img"> 
+             <img src="img/iconNotePad.png" alt="imagen de login" class="form_img"> 
 
             <form action="php/registro_usuario_be.php" method="POST" class="form_content">
                 <h1 class="form_tittle">Registro</h1>
