@@ -12,7 +12,7 @@
         echo '
         <script>
             alert("Es necesario llenar todos los campos");
-            window.location="../torneos.php";
+            window.location="../tareas.php";
         </script>
         ';
         exit();
@@ -27,7 +27,7 @@
         echo'
           <script>
               alert("Esta Tarea ya está registrado");
-              window.location="../torneos.php";
+              window.location="../tareas.php";
           </script>
         ';
         exit();
@@ -43,23 +43,12 @@
     echo '
         <script>
         alert("Tarea registrado con éxito");
-        window.location="../torneos.php";
+        window.location="../tareas.php";
        </script>
 
         ';
     
-    /* $query = "SELECT * FROM equipos ORDER BY rand() LIMIT 2";
-    $ejecutar = mysqli_query($conexion, $query);
-
-    while($rows=mysqli_fetch_array($ejecutar)){
-        echo "<input type='text' value='$rows[1]' disabled><br><br>"; 
-        }
-
-    function calcularVs(){
-
-    
-        
-    } */
+ 
 
 
 

@@ -16,7 +16,7 @@
         <div class="shape1"></div>
         <div class="shape2"></div>
 
-        <h1 class="title">ChallengeWeb</h1>
+        <h1 class="title">NoteJob</h1>
 
         <div class="form">
              <img src="img/iconNotePad.png" alt="imagen de login" class="form_img"> 

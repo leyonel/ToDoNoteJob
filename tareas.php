@@ -1,3 +1,4 @@
+
 <?php
    include 'php/conexion_be.php';
    session_start();
@@ -46,6 +47,7 @@
             <li class="nav-item">
             </li>
             <li class="nav-item">
+                
                 <a class="nav-link" href="php/cerrar_s.php">Cerrar Sesion</a>
             </li>
           </ul>
@@ -63,7 +65,7 @@
 
             <div class="team-form row">
                 <div class="form-field col-md-12">
-                <form action='php/torneos_be.php' method='post' enctype='multipart/form-data'>
+                <form action='php/tareas_be.php' method='post' enctype='multipart/form-data'>
                     <input type="text" class="input-text" name="titulo" id="name">
                     <label for="nombreEquipo" class="label">Título de Tarea</label>
                 </div>
@@ -118,8 +120,11 @@
                                 <td><?php echo $row[1] ?></td>
                                 <td><?php echo $row[2] ?></td>
                                 <td><?php echo $row[3] ?></td>
-                                <td><button type="button" class="btn btn-danger" onclick="location.href='php/eliminar_torneo.php?<?php echo $row[0]?>'">Borrar</button></td>
-                                <!-- <td><button type="button" class="btn btn-success" onclick="location.href='vistatorneo.php?<?php echo $row[0]?>'">Ver</button></td>             -->
+                                <td>
+                                    <button type="button" class="btn btn-danger" onclick="location.href='php/eliminar_tarea.php?<?php echo $row[0]?>'">Borrar</button>
+                                    <button type="button" class="btn btn-info" onclick="location.href='php/enProgreso.php?<?php echo $row[0]?>'">En Progreso</button>
+                                    <button type="button" class="btn btn-success" onclick="location.href='php/completado.php?<?php echo $row[0]?>'">Completado</button>
+                                </td>             
                             </tr>
                             
                         </tbody>  

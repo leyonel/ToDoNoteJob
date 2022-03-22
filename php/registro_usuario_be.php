@@ -4,6 +4,8 @@
     $usuario = $_POST['usuario'];
     $contra = $_POST['contra'];
 
+    $pass_cifrado = password_hash($contra, PASSWORD_DEFAULT);
+
     if(empty($usuario and $contra)){
       echo '
       <script>
@@ -15,7 +17,7 @@
     }
 
     $query = "INSERT INTO usuarios(usuario, contra) 
-            VALUES('$usuario', '$contra')";
+            VALUES('$usuario', '$pass_cifrado')";
 
     $verificar_usuario = mysqli_query($conexion,"SELECT * FROM usuarios WHERE usuario='$usuario' ");
     
@@ -43,7 +45,7 @@
     else{
         echo '
         <script>
-        alert("Usuario NO almacenado, FAKET");
+        alert("Usuario NO almacenado");
         window.location="../index.php";
        </script>
 
