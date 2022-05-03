@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema encargado de crear una agenda de tareas o pendientes de manera individual por usuario">
+    <meta name="keywords" content="notejob, tarea, sesion, administrativo, organigrama, organizar, agendar"/>
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="loginStyle.css">
@@ -11,6 +13,12 @@
 </head>
 <body>
 <div class="container">
+    <p style="visibility:hidden;">agenda semanal free fire</p>
+    <p style="visibility:hidden;">agenda 2022</p>
+    <h1 style="visibility:hidden;">agenda semanal</h1>
+    <h1 style="visibility:hidden;">agenda 21</h1>
+    <h1 style="visibility:hidden;">mi actividad</h1>
+    <h1 style="visibility:hidden;">organizador grafico</h1>
 
     <div class="l-form">
         <div class="shape1"></div>
