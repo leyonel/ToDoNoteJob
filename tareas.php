@@ -84,7 +84,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-sm">
                 <table class="table table-bordered table-hover">
                     <thead class=thead-dark>
                         <tr>
@@ -107,7 +107,7 @@
                     <?php
                         $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$user'");
                         $row=mysqli_fetch_row($validar_usuario);
-                        $query = "SELECT * FROM tareas WHERE usuario_id = $row[0] ";
+                        $query = "SELECT * FROM tareas WHERE usuario_id = $row[0] and estatus = 'pendiente'";
                 
                         $ejecutar = mysqli_query($conexion, $query);
                 
@@ -134,6 +134,105 @@
                     ?>
                 </table>
             </div>
+            <div class="col-sm">
+                <table class="table table-bordered table-hover">
+                    <thead class=thead-dark>
+                        <tr>
+                            <th>
+                                Nombre de la Tarea
+                            </th>
+                            <th>
+                                Descripcion
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Acciones
+                            </th>
+                         </tr>
+                    </thead>
+
+
+                    <?php
+                        $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$user'");
+                        $row=mysqli_fetch_row($validar_usuario);
+                        $query = "SELECT * FROM tareas WHERE usuario_id = $row[0] and estatus = 'progreso' ";
+                
+                        $ejecutar = mysqli_query($conexion, $query);
+                
+                        while($row=mysqli_fetch_array($ejecutar)){
+                    ?>
+                        
+                        <tbody>
+                            
+                            <tr class="table-secondary">
+                                <td><?php echo $row[1] ?></td>
+                                <td><?php echo $row[2] ?></td>
+                                <td><?php echo $row[3] ?></td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" onclick="location.href='php/eliminar_tarea.php?<?php echo $row[0]?>'">Borrar</button>
+                                    <button type="button" class="btn btn-success" onclick="location.href='php/completado.php?<?php echo $row[0]?>'">Completado</button>
+                                </td>             
+                            </tr>
+                            
+                        </tbody>  
+
+                    <?php
+                        } 
+                    ?>
+                </table>
+            </div>
+            <div class="col-sm">
+                <table class="table table-bordered table-hover">
+                    <thead class=thead-dark>
+                        <tr>
+                            <th>
+                                Nombre de la Tarea
+                            </th>
+                            <th>
+                                Descripcion
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Acciones
+                            </th>
+                         </tr>
+                    </thead>
+
+
+                    <?php
+                        $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$user'");
+                        $row=mysqli_fetch_row($validar_usuario);
+                        $query = "SELECT * FROM tareas WHERE usuario_id = $row[0] and estatus = 'completado' ";
+                
+                        $ejecutar = mysqli_query($conexion, $query);
+                
+                        while($row=mysqli_fetch_array($ejecutar)){
+                    ?>
+                        
+                        <tbody>
+                            
+                            <tr class="table-secondary">
+                                <td><?php echo $row[1] ?></td>
+                                <td><?php echo $row[2] ?></td>
+                                <td><?php echo $row[3] ?></td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" onclick="location.href='php/eliminar_tarea.php?<?php echo $row[0]?>'">Borrar</button>
+                                    <button type="button" class="btn btn-success" onclick="location.href='php/completado.php?<?php echo $row[0]?>'">Completado</button>
+                                </td>             
+                            </tr>
+                            
+                        </tbody>  
+
+                    <?php
+                        } 
+                    ?>
+                </table>
+            </div>
+            
         </div>
     </div>
 </main>

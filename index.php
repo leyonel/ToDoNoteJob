@@ -13,13 +13,6 @@
 </head>
 <body>
 <div class="container">
-    <p style="visibility:hidden;">agenda semanal free fire</p>
-    <p style="visibility:hidden;">agenda 2022</p>
-    <h1 style="visibility:hidden;">agenda semanal</h1>
-    <h1 style="visibility:hidden;">agenda 21</h1>
-    <h1 style="visibility:hidden;">mi actividad</h1>
-    <h1 style="visibility:hidden;">organizador grafico</h1>
-
     <div class="l-form">
         <div class="shape1"></div>
         <div class="shape2"></div>
