@@ -22,7 +22,7 @@
     $row=mysqli_fetch_row($validar_usuario);
 
 
-    $validar_torneo=mysqli_query($conexion, "SELECT * FROM tareas WHERE titulo='$titulo' and user_id=$row[0]");
+    $validar_torneo=mysqli_query($conexion, "SELECT * FROM tareas WHERE titulo='$titulo' and usuario_id=$row[0]");
     if(mysqli_num_rows($validar_torneo)>0){
         echo'
           <script>
