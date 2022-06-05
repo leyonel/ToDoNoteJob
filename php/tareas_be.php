@@ -6,7 +6,7 @@
 
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
-    $iduser = $_SESSION['usuario'];
+    $user = $_SESSION['usuario'];
 
     if (empty($titulo and $descripcion)) {
         echo '
@@ -18,11 +18,11 @@
         exit();
     }
 
-    $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='$iduser'");
+    $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='$user'");
     $row=mysqli_fetch_row($validar_usuario);
 
 
-    $validar_torneo=mysqli_query($conexion, "SELECT * FROM tareas WHERE titulo='$titulo'");
+    $validar_torneo=mysqli_query($conexion, "SELECT * FROM tareas WHERE titulo='$titulo' and user_id=$row[0]");
     if(mysqli_num_rows($validar_torneo)>0){
         echo'
           <script>
