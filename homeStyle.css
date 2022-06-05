@@ -1,3 +1,24 @@
+body {
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+          -45deg, 
+          rgb(126, 227, 59) 0%, 
+          rgb(87, 230, 142) 25%, 
+          rgb(68, 183, 174) 51%, 
+          rgb(30, 150, 230) 100%
+    );  
+    animation: AnimateBG 20s ease infinite;
+  }
+  
+  @keyframes AnimateBG { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+
+
+/*------------------------------------------------*/
 .navbar{
     box-shadow: 2px 2px 5px rgb(2, 1, 1);
     opacity: .8;
@@ -7,13 +28,19 @@
 }
 
 #navig{
-    background-color:#1db336;
+    background-color:#2ab31d;
 }
 .navbar .nav-item .nav-link{
    color: rgb(0, 0, 0);
 }
 
+.navbar-brand{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 /* ---------------------------------- */
+.nav-item a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .main-header{                                      
     position: relative;
     background: url(img/home.png); 
@@ -78,10 +105,11 @@
     position: absolute;
     left: 20px;
     bottom: 11px;
-    font-size: 18px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 50px;
     font-weight: 400;
-    color: #3f9e37;
+    color: #000000;
     cursor: text;
     text-transform: capitalize;
     transition: transform 0.2s ease-in-out;
@@ -109,8 +137,4 @@
     border: none;
     cursor: pointer;
 }
-
-
-
-/* ------------------------------------------------------- */
 
