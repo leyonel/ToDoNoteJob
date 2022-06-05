@@ -26,32 +26,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/5bd33a9240.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><script src="https://kit.fontawesome.com/5bd33a9240.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="homeStyle.css">
     <title>Home</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" id="navig">
      <div class="container">
-        <a class="navbar-brand" href="/" >
+     <ul class="navbar-nav ml-auto">
+        <a class="navbar-brand">
              <img src="img/iconNotePad.png" alt="Logo" style="width: 5%;"> 
-             
              NoteJob
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-            </li>
+
+        
+           
             <li class="nav-item">
                 
                 <a class="nav-link" href="php/cerrar_s.php">Cerrar Sesion</a>
             </li>
           </ul>
-        </div>
      </div>
     </nav>
     
@@ -82,22 +76,23 @@
         </div>
     </secction>
 
+ 
     <div class="container">
         <div class="row">
             <div class="col-sm">
                 <table class="table table-bordered table-hover">
-                    <thead class=thead-dark>
+                    <thead class='thead-dark'>
                         <tr>
-                            <th>
+                            <th class="titulosTareas">
                                 Nombre de la Tarea
                             </th>
-                            <th>
+                            <th class="titulosTareas">
                                 Descripcion
                             </th>
-                            <th>
+                            <th class="titulosTareas">
                                 Status
-                            </th>
-                            <th>
+                            </th >
+                            <th class="titulosTareas">
                                 Acciones
                             </th>
                          </tr>
@@ -167,10 +162,10 @@
                         <tbody>
                             
                             <tr class="table-secondary">
-                                <td><?php echo $row[1] ?></td>
-                                <td><?php echo $row[2] ?></td>
-                                <td><?php echo $row[3] ?></td>
-                                <td>
+                                <td class= "contenido"><?php echo $row[1] ?></td>
+                                <td class= "contenido"><?php echo $row[2] ?></td>
+                                <td class= "contenido"><?php echo $row[3] ?></td>
+                                <td class= "contenido">
                                     <button type="button" class="btn btn-danger" onclick="location.href='php/eliminar_tarea.php?<?php echo $row[0]?>'">Borrar</button>
                                     <button type="button" class="btn btn-success" onclick="location.href='php/completado.php?<?php echo $row[0]?>'">Completado</button>
                                 </td>             
@@ -221,7 +216,7 @@
                                 <td><?php echo $row[3] ?></td>
                                 <td>
                                     <button type="button" class="btn btn-danger" onclick="location.href='php/eliminar_tarea.php?<?php echo $row[0]?>'">Borrar</button>
-                                    <button type="button" class="btn btn-success" onclick="location.href='php/completado.php?<?php echo $row[0]?>'">Completado</button>
+                                    <button type="button" class="btn btn-info" onclick="location.href='php/enProgreso.php?<?php echo $row[0]?>'">En Progreso</button>
                                 </td>             
                             </tr>
                             
@@ -235,8 +230,10 @@
             
         </div>
     </div>
+
+   
 </main>
-                
+              
             
 </body>
 </html>
